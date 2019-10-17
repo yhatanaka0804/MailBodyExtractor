@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>メール本文抽出テスト</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./extractor.css">
+
+  <body>
+    <div id="content">
+      <ul id="textArea" class="clearfix">
+        <li id="leftBox">
+          <textarea class="textBox" id="inputText" wrap="off"></textarea>
+          <div>
+            <button id="extractButton">抽出</button>
+          </div>
+        </li>
+        <li id="arrow">
+          →
+        </li>
+        <li id="rightBox">
+          <textarea class="textBox" id="outputText" wrap="off" readonly></textarea>
+          <div>
+            <span>抽出開始行番号:</span>
+            <input type="text" id="startLineNo" readonly />
+          </div>
+          <div>
+            <span>抽出行数:</span>
+            <input type="text" id="lineCount" readonly />
+          </div>
+        </li>
+      </ul>
+    </div>
+    <script src="./jquery.min.js"></script>
+    <script src="./extractor.js"></script>
+    <script>
+      $(function () {
+        $('#extractButton').on('click', function () {
+          var extractor = new Extractor();
+          var inputText = $('#inputText').val();
+          var result = extractor.extract(inputText);
+          $('#outputText').val(result.text);
+          $('#startLineNo').val(result.startLineNo);
+          $('#lineCount').val(result.lineCount);
+        });
+      });
+    </script>
+  </body>
+
+</html>

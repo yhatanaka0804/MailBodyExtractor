@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.clearfix {
+  overflow: hidden;
+}
+
+body {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#content {
+  margin: 0 auto;
+  width: 1226px;
+}
+
+#textArea {
+  list-style-type: none;
+}
+
+#textArea li {
+  float: left;
+}
+
+#leftBox {
+  width: 600px;
+  text-align: right;
+}
+
+#rightBox {
+  width: 600px;
+  text-align: right;
+}
+
+.textBox {
+  width: 600px;
+  height: 800px;
+}
+
+#arrow {
+  margin: 100px 5px;
+  width: 16px;
+}
